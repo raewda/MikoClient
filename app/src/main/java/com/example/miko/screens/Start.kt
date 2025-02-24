@@ -109,7 +109,7 @@ fun Start(
                         modifier = Modifier
                             .size(250.dp, 50.dp),
                         onClick = {
-
+                            navController.navigate("registration")
                         },
                         border = BorderStroke(
                             width = 2.dp,
@@ -139,7 +139,7 @@ fun Start(
                         modifier = Modifier
                             .size(250.dp, 50.dp),
                         onClick = {
-
+                            navController.navigate("applicationinfo")
                         },
                         border = BorderStroke(
                             width = 2.dp,

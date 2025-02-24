@@ -9,7 +9,9 @@ import androidx.compose.runtime.remember
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.miko.screens.ApplicationInfo
 import com.example.miko.screens.Autorization
+import com.example.miko.screens.Registration
 import com.example.miko.screens.Start
 import com.example.miko.ui.theme.MikoTheme
 
@@ -22,6 +24,8 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val start = remember { mutableStateOf(false) }
                 val autorization = remember { mutableStateOf(false) }
+                val registration = remember { mutableStateOf(false) }
+                val applicationinfo = remember { mutableStateOf(false) }
 
                 NavHost(
                     navController = navController,
@@ -37,6 +41,18 @@ class MainActivity : ComponentActivity() {
                         Autorization(
                             navController,
                             autorization = autorization
+                        )
+                    }
+                    composable("registration") {
+                        Registration(
+                            navController,
+                            registration = registration
+                        )
+                    }
+                    composable("applicationinfo") {
+                        ApplicationInfo(
+                            navController,
+                            applicationinfo = applicationinfo
                         )
                     }
                 }
