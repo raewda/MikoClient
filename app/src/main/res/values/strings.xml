@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Miko</string>
+
+    <string name="application_info">
+        blablabla
+    </string>
+
 </resources>
