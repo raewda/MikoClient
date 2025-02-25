@@ -2,6 +2,7 @@ package com.example.miko.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -36,7 +37,9 @@ fun Start(
     start: MutableState<Boolean>
 ) {
     Scaffold(
-        modifier = Modifier.fillMaxSize(), containerColor = one
+        modifier = Modifier
+            .fillMaxSize(),
+        containerColor = one
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -63,13 +66,12 @@ fun Start(
             Column(
                 modifier = Modifier
                     .padding(vertical = 60.dp)
-                    .padding(horizontal = 25.dp)
-
+                    .padding(horizontal = 25.dp),
+                verticalArrangement = Arrangement.spacedBy(40.dp)
             ) {
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 20.dp),
+                        .fillMaxWidth(),
                     horizontalAlignment = Alignment.Start
                 ) {
                     Button(
@@ -98,8 +100,7 @@ fun Start(
 
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 20.dp),
+                        .fillMaxWidth(),
                     horizontalAlignment = Alignment.End
                 ) {
                     Button(
@@ -128,8 +129,7 @@ fun Start(
 
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 20.dp),
+                        .fillMaxWidth(),
                     horizontalAlignment = Alignment.Start
                 ) {
                     Button(

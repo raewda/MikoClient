@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                             start = start
                         )
                     }
-                    composable("aautorization") {
+                    composable("autorization") {
                         Autorization(
                             navController,
                             autorization = autorization
