@@ -46,7 +46,7 @@ fun Registration(
     navController: NavHostController,
     registration: MutableState<Boolean>,
 ) {
-    val loginUser = remember { mutableStateOf(TextFieldValue()) }
+    val loginUser = remember { mutableStateOf("") }
     val passwordUser = remember { mutableStateOf("") }
     val companyCode = remember { mutableStateOf("") }
     val emailUser = remember { mutableStateOf("") }
@@ -117,7 +117,7 @@ fun Registration(
                 ) {
                     OutlinedTextField(
                         value = companyCode.value, onValueChange = { new ->
-                            companyCode.value = new
+                            companyCode.value = new.uppercase()
                         },
                         modifier = Modifier,
                         shape = RoundedCornerShape(
@@ -179,7 +179,7 @@ fun Registration(
                     OutlinedTextField(
                         value = emailUser.value,
                         onValueChange = { new ->
-                            emailUser.value = new
+                            emailUser.value = new.uppercase()
                         },
                         modifier = Modifier,
                         shape = RoundedCornerShape(
@@ -241,7 +241,7 @@ fun Registration(
                     OutlinedTextField(
                         value = loginUser.value,
                         onValueChange = { new ->
-                            loginUser.value = new
+                            loginUser.value = new.uppercase()
                         },
                         modifier = Modifier,
                         shape = RoundedCornerShape(
@@ -304,7 +304,7 @@ fun Registration(
                 ) {
                     OutlinedTextField(
                         value = passwordUser.value, onValueChange = { new ->
-                            passwordUser.value = new
+                            passwordUser.value = new.uppercase()
                         },
                         modifier = Modifier,
                         shape = RoundedCornerShape(

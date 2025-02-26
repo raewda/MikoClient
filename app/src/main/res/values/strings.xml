@@ -5,4 +5,12 @@
         blablabla
     </string>
 
+    <string name="login">
+        JOPA
+    </string>
+
+    <string name="email">
+        YAROSLAVE@PIDORAS
+    </string>
+
 </resources>

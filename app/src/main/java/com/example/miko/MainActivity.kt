@@ -11,6 +11,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.miko.screens.ApplicationInfo
 import com.example.miko.screens.Autorization
+import com.example.miko.screens.Brand
+import com.example.miko.screens.Order
+import com.example.miko.screens.Profile
 import com.example.miko.screens.Registration
 import com.example.miko.screens.Start
 import com.example.miko.ui.theme.MikoTheme
@@ -26,6 +29,9 @@ class MainActivity : ComponentActivity() {
                 val autorization = remember { mutableStateOf(false) }
                 val registration = remember { mutableStateOf(false) }
                 val applicationinfo = remember { mutableStateOf(false) }
+                val profile = remember { mutableStateOf(false) }
+                val brand = remember { mutableStateOf(false) }
+                val order = remember { mutableStateOf(false) }
 
                 NavHost(
                     navController = navController,
@@ -53,6 +59,24 @@ class MainActivity : ComponentActivity() {
                         ApplicationInfo(
                             navController,
                             applicationinfo = applicationinfo
+                        )
+                    }
+                    composable("profile") {
+                        Profile(
+                            navController,
+                            profile = profile
+                        )
+                    }
+                    composable("brand") {
+                        Brand(
+                            navController,
+                            brand = brand
+                        )
+                    }
+                    composable("order") {
+                        Order(
+                            navController,
+                            order = order
                         )
                     }
                 }

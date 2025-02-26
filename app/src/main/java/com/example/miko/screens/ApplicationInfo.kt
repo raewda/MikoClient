@@ -50,7 +50,7 @@ fun ApplicationInfo(
                 TextButton(
                     modifier = Modifier,
                     onClick = {
-                        navController.navigate("start")
+                        navController.navigateUp()
                     }
                 ) {
                     Text(

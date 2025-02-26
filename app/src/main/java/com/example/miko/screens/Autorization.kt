@@ -40,7 +40,7 @@ fun Autorization(
     navController: NavHostController,
     autorization: MutableState<Boolean>
 ){
-    val loginUser = remember { mutableStateOf(TextFieldValue()) }
+    val loginUser = remember { mutableStateOf("") }
     val passwordUser = remember { mutableStateOf("") }
 
     Scaffold(
@@ -106,7 +106,7 @@ fun Autorization(
                     OutlinedTextField(
                         value = loginUser.value,
                         onValueChange = {
-                                new -> loginUser.value = new
+                                new -> loginUser.value = new.uppercase()
                         },
                         modifier = Modifier,
                         shape = RoundedCornerShape(
@@ -168,7 +168,7 @@ fun Autorization(
                     OutlinedTextField(
                         value = passwordUser.value,
                         onValueChange = {
-                                new -> passwordUser.value = new
+                                new -> passwordUser.value = new.uppercase()
                         },
                         modifier = Modifier,
                         shape = RoundedCornerShape(
@@ -194,21 +194,21 @@ fun Autorization(
                         )
                     )
 
-                    TextButton(
-                        modifier = Modifier
-                            .align(Alignment.End),
-                        onClick = {
-
-                        }
-                    ) {
-                        Text(
-                            text = "код на почту",
-                            modifier = Modifier,
-                            fontFamily = zk,
-                            fontSize = 18.sp,
-                            color = four
-                        )
-                    }
+//                    TextButton(
+//                        modifier = Modifier
+//                            .align(Alignment.End),
+//                        onClick = {
+//
+//                        }
+//                    ) {
+//                        Text(
+//                            text = "код на почту",
+//                            modifier = Modifier,
+//                            fontFamily = zk,
+//                            fontSize = 18.sp,
+//                            color = four
+//                        )
+//                    }
                 }
             }
 
@@ -219,7 +219,7 @@ fun Autorization(
                 modifier = Modifier,
                 onClick = {
                     // переделать
-                    navController.navigate("start")
+                    navController.navigate("profile")
                 },
                 border = BorderStroke(
                     width = 2.dp,
