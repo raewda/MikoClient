@@ -114,6 +114,7 @@ fun Autorization(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 24.sp,
@@ -176,6 +177,7 @@ fun Autorization(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 24.sp,

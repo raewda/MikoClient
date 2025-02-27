@@ -176,6 +176,7 @@ fun Profile(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 18.sp,
@@ -212,13 +213,14 @@ fun Profile(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 18.sp,
                             color = four
                         ), placeholder = {
                             Text(
-                                "АДРЕСС",
+                                "АДРЕС",
                                 color = three,
                                 fontFamily = zk,
                                 fontSize = 24.sp,
@@ -359,6 +361,7 @@ fun Profile(
                                         ),
                                         enabled = true,
                                         readOnly = false,
+                                        singleLine = true,
                                         textStyle = TextStyle(
                                             fontFamily = zk,
                                             fontSize = 20.sp,
@@ -421,6 +424,7 @@ fun Profile(
                                         ),
                                         enabled = true,
                                         readOnly = false,
+                                        singleLine = true,
                                         textStyle = TextStyle(
                                             fontFamily = zk,
                                             fontSize = 20.sp,

@@ -125,6 +125,7 @@ fun Registration(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 24.sp,
@@ -187,6 +188,7 @@ fun Registration(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 24.sp,
@@ -249,6 +251,7 @@ fun Registration(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 24.sp,
@@ -312,6 +315,7 @@ fun Registration(
                         ),
                         enabled = true,
                         readOnly = false,
+                        singleLine = true,
                         textStyle = TextStyle(
                             fontFamily = zk,
                             fontSize = 24.sp,
