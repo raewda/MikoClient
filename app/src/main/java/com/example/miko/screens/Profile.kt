@@ -74,7 +74,7 @@ fun Profile(
                         Button(
                             modifier = Modifier,
                             onClick = {
-                                //
+                                navController.navigate("katalog")
                             },
                             border = BorderStroke(
                                 width = 2.dp,
