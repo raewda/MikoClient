@@ -106,10 +106,14 @@ class MainActivity : ComponentActivity() {
                             item = Orders.getById(id?:0)
                         )
                     }
-                    composable("buy") {
+                    composable("buy/{id}", arguments = listOf(navArgument("id"){
+                        NavType.StringType
+                    })) {
+                        val id = it.arguments?.getString("id")?.toInt()
                         Buy(
                             navController,
-                            buy = buy
+                            buy = buy,
+                            item = Orders.getById(id?:0)
                         )
                     }
                 }

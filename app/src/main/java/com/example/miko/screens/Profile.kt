@@ -311,7 +311,6 @@ fun Profile(
                                 width = 2.dp,
                                 color = four),
                         ) {
-
                             Column(
                                 modifier = Modifier
                                     .fillMaxSize()

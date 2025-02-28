@@ -75,7 +75,7 @@ fun Offer(
             Button(
                 modifier = Modifier,
                 onClick = {
-                    navController.navigate("buy")
+                    navController.navigate("buy/${item.id}")
                 },
                 border = BorderStroke(
                     width = 2.dp,
