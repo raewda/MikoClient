@@ -50,12 +50,12 @@ fun Order(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(vertical = 10.dp),
                 horizontalAlignment = Alignment.Start
             ) {
                 TextButton(
@@ -66,8 +66,7 @@ fun Order(
                 ) {
                     Text(
                         text = "назад",
-                        modifier = Modifier
-                            .padding(vertical = 10.dp),
+                        modifier = Modifier,
                         fontFamily = zk,
                         fontSize = 20.sp,
                         color = four

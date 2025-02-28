@@ -1,9 +1,7 @@
 package com.example.miko.screens
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -47,14 +45,13 @@ fun Offer(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
-                .verticalScroll(rememberScrollState()),
-            verticalArrangement = Arrangement.SpaceAround,
+                .padding(innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(vertical = 10.dp),
                 horizontalAlignment = Alignment.Start
             ) {
                 TextButton(
@@ -65,8 +62,7 @@ fun Offer(
                 ) {
                     Text(
                         text = "назад",
-                        modifier = Modifier
-                            .padding(vertical = 10.dp),
+                        modifier = Modifier,
                         fontFamily = zk,
                         fontSize = 20.sp,
                         color = four
@@ -121,13 +117,14 @@ fun offerItem (
         fontFamily = zk,
         color = four,
         modifier = Modifier
-            .padding(horizontal = 10.dp),
+            .padding(horizontal = 25.dp),
         lineHeight = 50.sp
     )
 
     Column(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(horizontal = 15.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -138,12 +135,18 @@ fun offerItem (
         )
     }
 
-    Text(
-        text = item.orderCharacter,
+    Column(
         modifier = Modifier
-            .padding(horizontal = 10.dp),
-        fontSize = 24.sp,
-        fontFamily = zk,
-        color = four
-    )
+            .verticalScroll(rememberScrollState())
+            .padding(vertical = 20.dp)
+            .padding(horizontal = 25.dp)
+    ) {
+        Text(
+            text = item.orderCharacter,
+            modifier = Modifier,
+            fontSize = 24.sp,
+            fontFamily = zk,
+            color = four
+        )
+    }
 }

@@ -37,14 +37,13 @@ fun ApplicationInfo(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
-                .verticalScroll(rememberScrollState()),
-            verticalArrangement = Arrangement.SpaceAround,
+                .padding(innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(vertical = 10.dp),
                 horizontalAlignment = Alignment.Start
             ) {
                 TextButton(
@@ -55,8 +54,7 @@ fun ApplicationInfo(
                 ) {
                     Text(
                         text = "назад",
-                        modifier = Modifier
-                            .padding(vertical = 10.dp),
+                        modifier = Modifier,
                         fontFamily = zk,
                         fontSize = 20.sp,
                         color = four
@@ -73,14 +71,19 @@ fun ApplicationInfo(
                 color = four
             )
 
-            Text(
-                text = stringResource(R.string.application_info),
+            Column(
                 modifier = Modifier
-                    .padding(vertical = 10.dp),
-                fontFamily = zk,
-                fontSize = 30.sp,
-                color = four
-            )
+                    .verticalScroll(rememberScrollState())
+            ) {
+                Text(
+                    text = stringResource(R.string.application_info),
+                    modifier = Modifier
+                        .padding(vertical = 10.dp),
+                    fontFamily = zk,
+                    fontSize = 30.sp,
+                    color = four
+                )
+            }
         }
     }
 }
