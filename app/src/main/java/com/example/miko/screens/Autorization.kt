@@ -221,7 +221,7 @@ fun Autorization(
                 modifier = Modifier,
                 onClick = {
                     // переделать
-                    navController.navigate("profile")
+                    navController.navigate("katalog")
                 },
                 border = BorderStroke(
                     width = 2.dp,
