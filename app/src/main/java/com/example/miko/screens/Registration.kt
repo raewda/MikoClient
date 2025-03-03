@@ -381,7 +381,7 @@ fun Registration(
                 )
 
                 TextButton(modifier = Modifier, onClick = {
-
+                    navController.navigate("applicationinfo")
                 }
                 ) {
                     Text(

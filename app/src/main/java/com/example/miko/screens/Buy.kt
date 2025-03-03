@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -36,12 +37,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import android.content.res.Resources
+import androidx.compose.ui.unit.Dp
+import kotlin.math.roundToInt
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
@@ -70,6 +77,7 @@ fun Buy(
     val numberTelephone = remember { mutableStateOf("") }
 
     val openMenu = remember { mutableStateOf(false) }
+//    val offsetMenu = remember { mutableStateOf(Offset(0F,0F)) }
     val bankPick = remember { mutableStateOf("") }
 
     val banksNames = listOf(
@@ -407,6 +415,7 @@ fun Buy(
                 ) {
                     Button(
                         modifier = Modifier,
+//                            .onGloballyPositioned { offsetMenu.value = it.positionInRoot()},
                         onClick = {
                             openMenu.value = true
                         },
@@ -429,10 +438,11 @@ fun Buy(
 
                 if (openMenu.value){
                     DropdownMenu(
-                        expanded = openMenu.value,
-                        onDismissRequest = { openMenu.value = false },
                         modifier = Modifier
-                            .background(four)
+                            .background(four),
+//                            .offset(offsetMenu.value.x.pxToDp(), offsetMenu.value.y.pxToDp()),
+                        expanded = openMenu.value,
+                        onDismissRequest = { openMenu.value = false }
                     ) {
                         DropdownMenuItem(
                             text = { Text(
@@ -644,6 +654,7 @@ fun Buy(
                                 onClick = {
                                     // добавление заказа в бд
                                     openBuyDialog.value = false
+                                    navController.navigate("offer")
                                 },
                                 border = BorderStroke(
                                     width = 2.dp,
@@ -659,12 +670,16 @@ fun Buy(
                                     fontSize = 24.sp
                                 )
                             }
-
                         }
                     }
                 }
-
             }
         }
     }
+}
+
+
+fun Float.pxToDp(): Dp {
+    val density = Resources.getSystem().displayMetrics.density
+    return (this / density).roundToInt().dp
 }
