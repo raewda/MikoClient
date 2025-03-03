@@ -78,7 +78,7 @@ fun Buy(
 
     val openMenu = remember { mutableStateOf(false) }
 //    val offsetMenu = remember { mutableStateOf(Offset(0F,0F)) }
-    val bankPick = remember { mutableStateOf("") }
+    val bankPick = remember { mutableStateOf("ВЫБРАТЬ БАНК") }
 
     val banksNames = listOf(
         "ВТБ", "СберБанк", "ГАЗПРОМБАНК", "Альфа Банк"
@@ -93,6 +93,7 @@ fun Buy(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .verticalScroll(rememberScrollState())
                 .padding(innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -428,7 +429,7 @@ fun Buy(
                         )
                     ) {
                         Text(
-                            text = "ВЫБРАТЬ БАНК",
+                            text = bankPick.value,
                             fontFamily = zk,
                             color = two,
                             fontSize = 22.sp
@@ -654,7 +655,7 @@ fun Buy(
                                 onClick = {
                                     // добавление заказа в бд
                                     openBuyDialog.value = false
-                                    navController.navigate("offer")
+                                    navController.navigateUp()
                                 },
                                 border = BorderStroke(
                                     width = 2.dp,
@@ -679,7 +680,7 @@ fun Buy(
 }
 
 
-fun Float.pxToDp(): Dp {
-    val density = Resources.getSystem().displayMetrics.density
-    return (this / density).roundToInt().dp
-}
+//fun Float.pxToDp(): Dp {
+//    val density = Resources.getSystem().displayMetrics.density
+//    return (this / density).roundToInt().dp
+//}
